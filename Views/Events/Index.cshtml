@@ -6,9 +6,20 @@
     <p>There are no events yet.</p>
 }
 else{
-<ol>
-    @foreach (string thing in ViewBag.events) {
-        <li>@thing</li>
+<table>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+    </tr>
+    @foreach (KeyValuePair<string, string> kvp in ViewBag.events) {
+        <tr>
+            <td>@kvp.Key</td>
+            <td>@kvp.Value</td>
+        </tr>
     }
-</ol>
+</table>
 }
